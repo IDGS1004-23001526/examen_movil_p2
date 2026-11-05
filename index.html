@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuestionario: Examen Móvil Integral P2</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-container">
+      <div class="badge-header">Evaluación Académica • Desarrollo & Seguridad Móvil</div>
+      <h1>Cuestionario: Examen Móvil Integral P2</h1>
+      <p class="subtitle">
+        Responde las 20 preguntas seleccionando una opción por reactivo. Al finalizar, presiona 
+        <strong>Calificar Cuestionario</strong> para validar tus respuestas y revisar la justificación técnica de cada acierto o equivocación.
+      </p>
+      <div class="progress-wrapper">
+        <div class="progress-info">
+          <span id="progress-text">Respondidas: 0 de 20</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Panel de Resultados (oculto hasta calificar) -->
+    <section id="result-banner" class="result-banner hidden" aria-live="polite">
+      <div class="score-circle">
+        <span id="score-number">0/20</span>
+        <small id="score-percentage">0%</small>
+      </div>
+      <div class="result-details">
+        <h2 id="result-title">Resultado de la Evaluación</h2>
+        <p id="result-message"></p>
+        <div class="stats-pills">
+          <span class="pill pill-correct">✔ Correctas: <strong id="count-correct">0</strong></span>
+          <span class="pill pill-incorrect">✖ Incorrectas: <strong id="count-incorrect">0</strong></span>
+          <span class="pill pill-unanswered">⚠ Sin responder: <strong id="count-unanswered">0</strong></span>
+        </div>
+      </div>
+      <div class="result-actions">
+        <button type="button" id="btn-retry-top" class="btn btn-secondary">Reiniciar Cuestionario</button>
+      </div>
+    </section>
+
+    <!-- Formulario de Preguntas -->
+    <form id="quiz-form" novalidate>
+      <div id="questions-container" class="questions-list"></div>
+
+      <div id="validation-alert" class="validation-alert hidden">
+        <span>⚠️ Aún tienes preguntas sin responder. Puedes calificar ahora (se contarán como incorrectas) o completarlas antes de revisar.</span>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="btn-shuffle" class="btn btn-outline" title="Mezclar el orden de las preguntas">
+          🔀 Mezclar Preguntas
+        </button>
+        <button type="button" id="btn-reset" class="btn btn-secondary">
+          ↺ Limpiar Respuestas
+        </button>
+        <button type="submit" id="btn-submit" class="btn btn-primary">
+          ✅ Enviar y Calificar
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="app-footer">
+    <p>Examen Móvil Integral P2 • Seguridad en Aplicaciones Móviles y Desarrollo con Flutter</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
